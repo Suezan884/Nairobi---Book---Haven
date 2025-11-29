@@ -1,0 +1,214 @@
+TITLE: Bookstore Customer Service Chatbot Using Rule-Based and NLP Techniques 
+
+Introduction 
+
+Small and medium-sized bookstores in Kenya rely heavily on WhatsApp, phone calls, and walk-in customers. Staff members repeatedly answer the same questions about opening hours, delivery, M-Pesa payments, location, and book availability. This repetitive work reduces the time they can spend on actual sales and customer care. 
+
+This project aimed to design and implement a low-cost, easy-to-deploy chatbot that can: 
+
+Answer common FAQs instantly (24/7) 
+
+Allow customers to search the book catalog by title, author, genre, or price 
+
+Work well even with the limited resources typical of Kenyan small businesses 
+
+The chatbot combines simple rule-based logic with basic Natural Language Processing (NLP) techniques and was trained and tested using frequently asked questions.  
+
+ 
+
+1. Problem Understanding  
+
+Local businesses in Kenya, such as bookstores, frequently receive repeated customer questions about: 
+
+location 
+
+payment methods 
+
+delivery 
+
+opening hours 
+
+book availability 
+
+A chatbot can help: 
+
+reduce workload for staff 
+
+provide instant responses 
+
+help customers search for books 
+
+improve customer experience 
+
+This project develops a simple chatbot using rule-based and NLP methods trained on a small FAQ dataset. 
+
+ 
+
+2. Data Collection & Processing  
+
+We created two synthetic datasets: 
+
+a) FAQs.csv (Customer Questions) 
+
+Collected 94 real bookstore questions with columns: 
+
+question 
+
+intent 
+
+response 
+
+Intents included: greeting, hours, delivery, payment, contact, location, thanks, goodbye, genre. 
+
+b) Books.csv (Catalog Data) 
+
+Contains 156 books with: 
+
+title 
+
+author 
+
+genre 
+
+price 
+
+Data preprocessing steps: 
+
+cleaned column names 
+
+removed trailing spaces 
+
+converted prices to numeric 
+
+generated intent keywords 
+
+performed EDA (word counts, intent distribution) 
+
+This ensured the data was ready for training and searching. 
+
+ 
+
+3. Chatbot Implementation  
+
+The chatbot uses two methods combined: 
+
+A) NLP Intent Classification (TF-IDF + Logistic Regression) 
+
+Vectorized the FAQ questions 
+
+Trained a classifier to predict the intent 
+
+Returned the response from the dataset 
+
+B) Rule-Based Book Search 
+
+Searches books based on: 
+
+title 
+
+author 
+
+genre 
+
+price range 
+
+This hybrid system lets the bot answer both FAQ questions and catalog queries. 
+
+ 
+
+4. Testing & Improvement  
+
+The chatbot was tested using several user inputs: 
+
+“What are your opening hours?”  
+
+“Do you deliver to Nairobi?” 
+
+“Show me books by Ngugi.” 
+
+“Find fantasy novels.”  
+
+Improvements made: 
+
+fixed inconsistent column casing 
+
+added rule-based detection for book queries 
+
+improved formatting of book results 
+
+handled misclassified intents 
+
+improved keyword cleaning 
+
+The model accuracy improved after preprocessing and cleaning. 
+
+ 
+
+5. Challenges & Local Language Issues  
+
+Some challenges included: 
+
+a) Limited dataset 
+
+Only about 100 FAQ questions are causing the model accuracy to be limited  
+
+b) Mixed language use 
+
+Kenyan customers may use: 
+
+English 
+
+Swahili 
+
+Sheng 
+Example: “mna deliver?”  
+
+The current model fails on many of these because the training data is mostly English. 
+
+ 
+
+Adding more multilingual examples would improve accuracy. 
+
+c) Misspellings and partial author names 
+
+Users may type: 
+
+“Alchmist” instead of “Alchemist” (spelling errors) 
+
+“ngugi wa” (partial name) 
+
+Fuzzy matching or semantic models could improve this. 
+
+ 
+
+Future Improvement  
+
+Collect 500–1000 real queries (ongoing logging)   
+
+Add Swahili and Sheng examples to the training data   
+
+Use phonetic matching or small language models fine-tuned on Kenyan text   
+
+Integrate session memory for follow-up questions 
+
+ 
+
+6. Conclusion 
+
+A functional hybrid chatbot was successfully built. It answers: 
+
+customer service questions 
+
+book availability queries 
+
+basic search functions 
+
+This system can assist bookstores in Kenya to automate customer support and improve response time. 
+
+ 
+
+ 
+
+ 
+
+ 
